@@ -5,8 +5,7 @@ function MainPage({ quote }) {
       <section className="quote_section">
 
           <p id="p_MP">{quote.sentence}</p>
-          
-       
+      
       </section>
     </>
   );

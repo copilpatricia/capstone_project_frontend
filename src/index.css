@@ -50,3 +50,12 @@ code {
 #p_MP{
   color: red;
 }
+
+/* Footer styling */
+
+.footer-container{
+  border: 2px solid pink;
+  height: 100px;
+  text-align: center;
+
+}

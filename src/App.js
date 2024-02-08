@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import './App.css';
 import Nav from './components/Nav';
+import Footer from "./components/Footer";
 import MainPage from './pages/MainPage';
 
 
@@ -23,6 +24,7 @@ function App() {
     <div>
       <Nav />
       <MainPage quote={quote} />
+      <Footer/>
     </div>
   );
 }
