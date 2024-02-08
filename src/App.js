@@ -1,11 +1,28 @@
-
+import { useEffect, useState } from "react";
 import './App.css';
-import Nav from './components/Nav'
+import Nav from './components/Nav';
+import MainPage from './pages/MainPage';
+
+
+
 function App() {
+  const [quote, setQuote] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch("https://api.gameofthronesquotes.xyz/v1/random");
+      const data = await res.json();
+      console.log(data)
+      
+      setQuote(data)
+    }
+    fetchData()
+  },[])
+
   return (
     <div>
       <Nav />
-      <h1>Hello capstone</h1>
+      <MainPage quote={quote} />
     </div>
   );
 }
