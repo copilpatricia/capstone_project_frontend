@@ -1,8 +1,8 @@
 function Nav() {
     return (
-        <nav>
+        <nav className="container-nav">
             <h1>taste the joy</h1>
-            <ul>
+            <ul className="container-ul">
                 <li>Home</li>
                 <li>About</li>
                 <li>Recipes</li>
