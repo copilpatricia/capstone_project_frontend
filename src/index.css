@@ -25,10 +25,6 @@ body {
 /* Main Page syling */
 
 
-.container_main {
-  /* background-color: lightgoldenrodyellow; */
-  
-}
 
 #title_MP {
   text-align: center;
@@ -103,6 +99,7 @@ body {
   .recipes_box {
     border: 2px solid #ccd5ae;
     border-radius: 15%;
+    cursor: pointer;
     background-color: #fefae0 ;
     padding: 5px;
 }
@@ -110,27 +107,32 @@ body {
 .img_recipes{
   width: 320px;
   height: 320px;
-  /* border-top-left-radius: 15%;
-  border-top-right-radius: 15%; */
   border-radius: 15%;
 }
 
 .title_recipes{
   text-align: center;
   font-family: "Raleway";
+  color: #718355;
   
 }
 
 /* Footer styling */
+.super_container{
+  height: 200px;
+  background-color: #cfe1b9;
+  border: 2px solid pink;
+}
 
 .footer_container{
-  border: 2px solid pink;
-  height: 200px;
+  
   display: flex;
+  margin-top: 40px;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-content: center;
+  
   gap: 20px;
-  background-color: #cfe1b9;
 }
 
 .subfooter_container{
