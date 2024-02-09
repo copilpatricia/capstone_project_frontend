@@ -15,6 +15,13 @@ function About() {
           delicious journey with me.
         </p>
         <p>
+          My affair with food began in the bustling markets and aromatic
+          kitchens of my childhood, where I learned the art of crafting
+          soul-satisfying dishes from my culinary-inclined family. From those
+          early moments, my love for exploring diverse cuisines and
+          experimenting with unique ingredients has only intensified.
+        </p>
+        <p>
           This blog is a testament to my gastronomic adventures, a canvas where
           I paint with the vibrant hues of spices, herbs, and the freshest
           produce. Whether you're a kitchen novice or a seasoned pro, I invite

@@ -1,11 +1,22 @@
+import {Link} from 'react-router-dom'
+
 function Nav() {
     return (
         <nav className="container-nav">
-            <h1>taste the joy</h1>
+            <Link to="/" style={{ textDecoration: 'none', color: "black" }}>
+                <h1>taste the joy</h1>
+            </Link>
             <ul className="container-ul">
-                <li>Home</li>
-                <li>About</li>
-                <li>Recipes</li>
+                <Link to="/" style={{ textDecoration: 'none', color: "black" }}>
+                    <li>Home</li>
+                </Link>
+                <Link to="/about" style={{ textDecoration: 'none', color: "black" }}>
+                    <li>About</li>
+                </Link>
+                <Link to="/recipes" style={{ textDecoration: 'none', color: "black" }}>
+                    <li>Recipes</li>
+
+                </Link>
             </ul>
         </nav>
     )

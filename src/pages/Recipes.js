@@ -5,13 +5,13 @@ function Recipes({recipes}) {
     return(
         <>
         <Nav />
-        <div>
+        <div className="container_recipes">
             {recipes.map((recipe) => {
                 return (
-                    <>
-                    <h1 key={recipe.id}>{recipe.title}</h1>
-                    <img src={recipe.image} alt="recipe" />
-                    <ul>
+                    <div className="recipes_box">
+                    <img src={recipe.image} alt="recipe" className="img_recipes" />
+                    <h5 key={recipe.id} className="title_recipes">{recipe.title}</h5>
+                    {/* <ul>
                        {recipe.ingredients.map((ingredient) => {
                         return (
                             <li>{ingredient}</li>
@@ -22,9 +22,9 @@ function Recipes({recipes}) {
                         return (
                             <p>{instruction}</p>
                         )
-                       })}
+                       })} */}
                     
-                    </>
+                    </div>
 
                 )
             })}
