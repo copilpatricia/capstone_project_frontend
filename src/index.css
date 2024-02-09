@@ -88,10 +88,18 @@ body {
 
 /* Footer styling */
 
-.footer-container{
+.footer_container{
   border: 2px solid pink;
-  height: 100px;
-  text-align: center;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
   background-color: #cfe1b9;
-
 }
+
+.subfooter_container{
+  background-color: red;
+  
+}
+
