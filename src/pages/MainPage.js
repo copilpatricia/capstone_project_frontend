@@ -1,5 +1,10 @@
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
+
 function MainPage({ quote }) {
   return (
+    <>
+    <Nav />
     <div className="container_main">
       <h2 id="title_MP">
         SIMPLE RECIPES MADE FOR
@@ -11,6 +16,8 @@ function MainPage({ quote }) {
         </div>
       </section>
     </div>
+    <Footer />
+    </>
   );
 }
 
