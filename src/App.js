@@ -6,6 +6,7 @@ import MainPage from './pages/MainPage';
 
 
 
+
 function App() {
   const [quote, setQuote] = useState([]);
 
@@ -23,6 +24,7 @@ function App() {
   return (
     <div>
       <Nav />
+      
       <MainPage quote={quote} />
       <Footer/>
     </div>

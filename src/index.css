@@ -1,40 +1,44 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #fefefe;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 
 /* Nav bar styling */
 .container-nav {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border: 2px solid red;
+  background-color: #cfe1b9 ;
+  font-family: "Lobster Two", sans-serif;
+  font-size: 20px;
 }
 
 .container-ul {
   display: flex;
   list-style: none;
-  gap: 25px;
+  gap: 55px;
+  font-family: "Raleway", sans-serif;
+  
 
 }
 
 /* Main Page syling */
 
+
+.container_main {
+  background-color: lightgoldenrodyellow;
+  
+}
+
 #title_MP {
   text-align: center;
-  color: red;
-  border: 2px solid green;
+  color: rgb(73, 71, 71);
   margin-top: 0px;
   margin-bottom: 0px;
+  padding: 20px;
+  height: 30px;
+  font-family: "Raleway", sans-serif;
 }
 
 .quote_section{
@@ -48,7 +52,25 @@ code {
 }
 
 #p_MP{
-  color: red;
+  font-size: 25px;
+  font-family: "Raleway";
+  font-style: italic;
+}
+
+/* About page styling */
+.container-about {
+  display: block;
+  margin: 0 auto;
+  width: 600px;
+}
+
+#title_about {
+  margin-bottom: 50px;
+  font-size: 35px;
+}
+
+.container-about p {
+  font-size: 20px;
 }
 
 /* Footer styling */
@@ -57,5 +79,6 @@ code {
   border: 2px solid pink;
   height: 100px;
   text-align: center;
+  background-color: #cfe1b9;
 
 }

@@ -1,13 +1,11 @@
 function MainPage({ quote }) {
   return (
-    <>
-      <h2 id="title_MP">SIMPLE RECIPES MADE FOR real.actual.everyday life.</h2>
+    <div className="container_main">
+      <h2 id="title_MP">SIMPLE RECIPES MADE FOR  everyday life.</h2>
       <section className="quote_section">
-
           <p id="p_MP">{quote.sentence}</p>
-      
       </section>
-    </>
+    </div>
   );
 }
 
