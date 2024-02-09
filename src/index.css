@@ -41,20 +41,33 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
+#word_MP {
+  margin-left: 25px;
+  font-style: italic;
+  font-weight: normal;
+}
+
 .quote_section{
-  border: 2px solid blue;
   margin-top: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  
+}
 
+.quote_container {
+  width: 50%;
+  height: 100px;
+  background-color: #718355;
 }
 
 #p_MP{
   font-size: 25px;
   font-family: "Raleway";
   font-style: italic;
+  text-align: center;
+  
 }
 
 /* About page styling */
