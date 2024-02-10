@@ -4,10 +4,13 @@ import { Route, Routes } from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import Recipes from "./pages/Recipes";
 import About from "./pages/About";
+//context
+import { UserContext } from "./context/UserContext";
 
 function App() {
   const [quote, setQuote] = useState([]);
   const [recipes, setRecipes] = useState([]);
+  const [user, setUser] = useState(null);
 
   // API for the quote
   useEffect(() => {
@@ -33,13 +36,15 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<MainPage quote={quote} />}/>
-        <Route path="/recipes" element={<Recipes recipes={recipes} />}/>
-        <Route path="/about" element={<About/>}/>
-      </Routes>
-    </div>
+    <UserContext.Provider value={{ user, setUser }}>
+      <div>
+        <Routes>
+          <Route path="/" element={<MainPage quote={quote} />} />
+          <Route path="/recipes" element={<Recipes recipes={recipes} />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
+    </UserContext.Provider>
   );
 }
 
