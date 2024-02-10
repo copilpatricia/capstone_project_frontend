@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import Recipes from "./pages/Recipes";
 import About from "./pages/About";
+import SignUser from './pages/SignUser';
 //context
 import { UserContext } from "./context/UserContext";
 
@@ -38,11 +39,18 @@ function App() {
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <div>
+        {
+          user ? (
         <Routes>
           <Route path="/" element={<MainPage quote={quote} />} />
           <Route path="/recipes" element={<Recipes recipes={recipes} />} />
           <Route path="/about" element={<About />} />
         </Routes>
+
+          ) : (
+            <SignUser/>
+          )
+        }
       </div>
     </UserContext.Provider>
   );

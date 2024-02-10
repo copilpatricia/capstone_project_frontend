@@ -1,6 +1,7 @@
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 
+
 function About() {
   return (
     <>
@@ -41,7 +42,7 @@ function About() {
           meal brings to our lives!
         </p>
       </div>
-
+     
       <Footer />
     </>
   );
