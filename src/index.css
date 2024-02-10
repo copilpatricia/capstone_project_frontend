@@ -117,6 +117,14 @@ body {
   
 }
 
+/* SignUser Page */
+
+.form_container{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
 /* Footer styling */
 .super_container{
   height: 200px;
