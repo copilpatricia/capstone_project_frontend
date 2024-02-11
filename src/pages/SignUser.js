@@ -1,44 +1,65 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useContext } from "react";
+import axios from "axios";
+import { UserContext } from "../context/UserContext";
 
 function SignUser() {
+    const userCtx = useContext(UserContext);
+    const {setUser} = userCtx
+
+
   const emailInputRef = useRef(null);
   const passwordInputRef = useRef(null);
   const [showSignUp, setShowSignUp] = useState(false);
 
-  const handleSignIn = (e) => {
+  const handleSignIn = async (e) => {
     e.preventDefault();
-    console.log(emailInputRef.current.value);
-    console.log(passwordInputRef.current.value);
-
     if (emailInputRef.current.value === "") {
-        emailInputRef.current.focus();
-        return;
-      }
-      if (passwordInputRef.current.value === "") {
-        passwordInputRef.current.focus();
-        return;
-      }
-    
+      emailInputRef.current.focus();
+      return;
+    }
+    if (passwordInputRef.current.value === "") {
+      passwordInputRef.current.focus();
+      return;
+    }
+    // POST request to the backend
+    try {
+      const res = await axios.post("http://localhost:4000/api/users/signin", {
+        email: emailInputRef.current.value,
+        password: passwordInputRef.current.value,
+      });
+      console.log(res.data);
+      setUser(res.data)
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const handleSignUp = (e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
-    console.log(emailInputRef.current.value);
-    console.log(passwordInputRef.current.value);
 
     if (emailInputRef.current.value === "") {
-        emailInputRef.current.focus();
-        return;
-      }
-      if (passwordInputRef.current.value === "") {
-        passwordInputRef.current.focus();
-        return;
-      }
-    
+      emailInputRef.current.focus();
+      return;
+    }
+    if (passwordInputRef.current.value === "") {
+      passwordInputRef.current.focus();
+      return;
+    }
+
+    // POST request to the backend
+    try {
+      const res = await axios.post("http://localhost:4000/api/users/signup", {
+        email: emailInputRef.current.value,
+        password: passwordInputRef.current.value,
+      });
+      console.log(res.data);
+      setUser(res.data)
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <main>
-
       {showSignUp ? (
         <div>
           <form
@@ -57,14 +78,15 @@ function SignUser() {
               name="email"
               id="email"
               type="text"
-              placeholder="Email or phone"
+              placeholder="Email"
             />
             <label htmlFor="password">Password</label>
             <input
               ref={passwordInputRef}
               name="password"
               id="password"
-              type="text"
+              type="password"
+              placeholder="Password"
             />
             <button type="submit">Sign In</button>
           </form>
@@ -76,7 +98,7 @@ function SignUser() {
       ) : (
         <div>
           <form
-          className="form_container"
+            className="form_container"
             onSubmit={handleSignUp}
             style={{
               display: "flex",
@@ -91,14 +113,15 @@ function SignUser() {
               name="email"
               id="email"
               type="text"
-              placeholder="Email or phone"
+              placeholder="Email"
             />
             <label htmlFor="password">Password</label>
             <input
               ref={passwordInputRef}
               name="password"
               id="password"
-              type="text"
+              type="password"
+              placeholder="Password"
             />
             <button type="submit">Sign Up</button>
           </form>
@@ -114,7 +137,5 @@ function SignUser() {
 
 export default SignUser;
 
-
-
-// no control form = useRef - for this form doesn't need to react with what the user is going to type 
+// no control form = useRef - for this form doesn't need to react with what the user is going to type
 // control form = useState - when the user type React knows that something is going to change - starting to filter

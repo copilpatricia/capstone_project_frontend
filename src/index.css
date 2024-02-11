@@ -119,10 +119,21 @@ body {
 
 /* SignUser Page */
 
-.form_container{
+main {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 100vh;
+  
+}
+
+.form_container{
+  align-items: center;
+  border: 2px solid red;
+  width: 300px;
+  height: 300px;
 }
 
 /* Footer styling */
