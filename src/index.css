@@ -3,16 +3,14 @@ body {
   background-color: #fefefe;
 }
 
-
 /* Nav bar styling */
 .container-nav {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: #cfe1b9 ;
+  background-color: #cfe1b9;
   font-family: "Lobster Two", sans-serif;
   font-size: 20px;
-  
 }
 
 .container-ul {
@@ -38,7 +36,6 @@ body {
   padding: 20px;
   height: 30px;
   font-family: "Raleway", sans-serif;
-  
 }
 
 #word_MP {
@@ -47,36 +44,46 @@ body {
   font-weight: normal;
 }
 
-.quote_section{
+.quote_section {
   margin-top: 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  
 }
 
 .quote_container {
   width: 50%;
-  height: 100px;
+  min-height: 100px;
   background-color: #718355;
 }
 
-#p_MP{
+#p_MP {
   font-size: 25px;
   font-family: "Raleway";
   font-style: italic;
   text-align: center;
-  
 }
 
 /* About page styling */
+
+.main_about {
+  background-image: url(https://images.unsplash.com/photo-1516211697506-8360dbcfe9a4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+}
+
 .container-about {
-  display: block;
-  margin: 60px auto;
+  background-color: #718355;
   width: 600px;
-  height: 100vh;
+  min-height: 50%;
+  padding: 20px;
+  margin: 25px 0;
 }
 
 #title_about {
@@ -92,35 +99,33 @@ body {
 /* Recipes styling */
 
 .container_recipes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    height: 100%;
-    padding: 40px;
-    
-  }
-  
-  .recipes_box {
-    border: 2px solid #ccd5ae;
-    border-radius: 15%;
-    cursor: pointer;
-    background-color: #fefae0 ;
-    padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+  padding: 40px;
 }
 
-.img_recipes{
+.recipes_box {
+  border: 2px solid #ccd5ae;
+  border-radius: 15%;
+  cursor: pointer;
+  background-color: #fefae0;
+  padding: 5px;
+}
+
+.img_recipes {
   width: 320px;
   height: 320px;
   border-radius: 15%;
 }
 
-.title_recipes{
+.title_recipes {
   text-align: center;
   font-family: "Raleway";
   color: #718355;
-  
 }
 
 /* SignUser Page */
@@ -137,7 +142,7 @@ body {
   background-repeat: no-repeat;
 }
 
-.form_container{
+.form_container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -161,7 +166,7 @@ body {
   padding: 5px;
 }
 
-.button_form{
+.button_form {
   margin: 10px;
   width: 230px;
   height: 40px;
@@ -173,20 +178,20 @@ body {
   font-size: 18px;
 }
 
-.button_form:hover{
+.button_form:hover {
   background-color: #41521f;
 }
 
 .span_form {
-margin-top: 10px;
-padding: 5px;
-font-style: italic;
+  margin-top: 10px;
+  padding: 5px;
+  font-style: italic;
 }
 
 .span_button {
   border: none;
   background-color: #718355;
-  
+
   cursor: pointer;
 }
 .span_button:hover {
@@ -195,7 +200,7 @@ font-style: italic;
 
 /* Single recipe styling */
 
-.supercontainer_recipe{
+.supercontainer_recipe {
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -203,9 +208,9 @@ font-style: italic;
   padding: 30px;
 }
 
-.container_recipe{
+.container_recipe {
   border: 2px solid #ccd5ae;
-  
+
   width: 400px;
   min-height: 600px;
   position: relative;
@@ -217,7 +222,7 @@ font-style: italic;
   font-family: "Raleway";
 }
 
-.image_recipe{
+.image_recipe {
   width: 140px;
   height: 140px;
   border-radius: 50%;
@@ -233,7 +238,6 @@ font-style: italic;
   margin-top: 80px;
   text-align: center;
   font-family: "Raleway";
-  
 }
 
 .recipe_subtitle {
@@ -242,23 +246,26 @@ font-style: italic;
 }
 
 /* Footer styling */
-.super_container{
+
+.footer_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   height: 160px;
   background-color: #cfe1b9;
-  border: 2px solid pink;
+
 }
 
-.footer_container{
-  
+.icons_container {
   display: flex;
-  margin-top: 40px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-  margin-top: 50px;
-  margin-bottom: 90px;
   gap: 20px;
+  /* margin-bottom: auto; */
+ 
 }
 
-
-
+.footer_text {
+  color: red;
+  text-align: center;
+  font-size: 12px;
+}
