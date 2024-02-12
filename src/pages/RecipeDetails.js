@@ -30,11 +30,13 @@ function RecipeDetails() {
           <img src={recipe.image} alt="single recipe" className="image_recipe" />  
           <h1 id="recipe_title">{recipe.title}</h1>
           <hr />
+          <h3 className="recipe_subtitle">INGREDIENTS</h3>
           <ul>
             {recipe.ingredients.map((ingredient, index) => (
               <li key={index}>{ingredient}</li>
             ))}
           </ul>
+          <h3 className="recipe_subtitle">INSTRUCTIONS</h3>
           <ul>
             {recipe.instructions.map((instruction, index) => (
               <li key={index}>{instruction}</li>

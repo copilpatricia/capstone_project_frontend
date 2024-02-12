@@ -156,10 +156,14 @@ main {
   padding: 20px;
 }
 
+.container_recipe ul li {
+  font-family: "Raleway";
+}
+
 .image_recipe{
   width: 140px;
   height: 140px;
-  border-radius: 40%;
+  border-radius: 50%;
   border: 2px solid #ccd5ae;
   align-content: center;
   position: absolute;
@@ -171,6 +175,13 @@ main {
 #recipe_title {
   margin-top: 80px;
   text-align: center;
+  font-family: "Raleway";
+  
+}
+
+.recipe_subtitle {
+  font-family: "Raleway";
+  margin-top: 30px;
 }
 
 /* Footer styling */
