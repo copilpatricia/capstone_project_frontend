@@ -28,7 +28,8 @@ function SignUser() {
         password: passwordInputRef.current.value,
       });
       console.log(res.data);
-      setUser(res.data)
+      setUser(res.data);
+      localStorage.setItem("blogUser", JSON.stringify(res.data))
     } catch (error) {
       console.log(error);
     }
@@ -54,6 +55,7 @@ function SignUser() {
       });
       console.log(res.data);
       setUser(res.data)
+      localStorage.setItem("blogUser", JSON.stringify(res.data))
     } catch (error) {
       console.log(error);
     }
@@ -139,3 +141,13 @@ export default SignUser;
 
 // no control form = useRef - for this form doesn't need to react with what the user is going to type
 // control form = useState - when the user type React knows that something is going to change - starting to filter
+
+
+
+// extract the user information
+
+//passwordInputRef.current.value
+//emailInputRef
+
+// create an object to store the values
+// push the object inside an array

@@ -6,15 +6,20 @@ import Footer from "./components/Footer";
 import MainPage from "./pages/MainPage";
 import Recipes from "./pages/Recipes";
 import About from "./pages/About";
-import SignUser from './pages/SignUser';
+import SignUser from "./pages/SignUser";
 //context
 import { UserContext } from "./context/UserContext";
 import RecipeDetails from "./pages/RecipeDetails";
 
 function App() {
+  let localStorageUser = JSON.parse(localStorage.getItem("blogUser"));
+  console.log(localStorageUser);
+  
   const [quote, setQuote] = useState([]);
   const [recipes, setRecipes] = useState([]);
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(localStorageUser ? localStorageUser : null);
+
+
 
   // API for the quote
   useEffect(() => {
@@ -43,19 +48,16 @@ function App() {
     <UserContext.Provider value={{ user, setUser }}>
       <div>
         <Nav />
-        {
-          user ? (
-        <Routes>
-          <Route path="/" element={<MainPage quote={quote} />} />
-          <Route path="/recipes" element={<Recipes recipes={recipes} />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/recipes/:id" element={<RecipeDetails/>} />
-        </Routes>
-
-          ) : (
-            <SignUser/>
-          )
-        }
+        {user ? (
+          <Routes>
+            <Route path="/" element={<MainPage quote={quote} />} />
+            <Route path="/recipes" element={<Recipes recipes={recipes} />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/recipes/:id" element={<RecipeDetails />} />
+          </Routes>
+        ) : (
+          <SignUser />
+        )}
         <Footer />
       </div>
     </UserContext.Provider>
@@ -63,3 +65,5 @@ function App() {
 }
 
 export default App;
+
+// store the user object into the local storage

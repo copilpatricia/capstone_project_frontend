@@ -3,11 +3,13 @@ function MainPage({ quote }) {
     <>
     
     <div className="container_main">
+      
+     
+      <section className="quote_section">
       <h2 id="title_MP">
         SIMPLE RECIPES MADE FOR
         <span id="word_MP">real. actual. everyday life.</span>
       </h2>
-      <section className="quote_section">
         <div className="quote_container">
           <p id="p_MP">{quote.sentence}</p>
         </div>

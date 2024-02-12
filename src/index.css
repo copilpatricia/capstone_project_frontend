@@ -24,16 +24,21 @@ body {
 
 /* Main Page syling */
 
-
+.container_main {
+  background-image: url(https://images.unsplash.com/photo-1516211697506-8360dbcfe9a4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
 #title_MP {
   text-align: center;
-  color: rgb(73, 71, 71);
+  color: #718355;
   margin-top: 0px;
   margin-bottom: 0px;
   padding: 20px;
   height: 30px;
   font-family: "Raleway", sans-serif;
+  
 }
 
 #word_MP {
@@ -45,6 +50,7 @@ body {
 .quote_section{
   margin-top: 0px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
