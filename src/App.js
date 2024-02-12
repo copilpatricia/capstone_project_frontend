@@ -7,6 +7,7 @@ import About from "./pages/About";
 import SignUser from './pages/SignUser';
 //context
 import { UserContext } from "./context/UserContext";
+import RecipeDetails from "./pages/RecipeDetails";
 
 function App() {
   const [quote, setQuote] = useState([]);
@@ -45,6 +46,7 @@ function App() {
           <Route path="/" element={<MainPage quote={quote} />} />
           <Route path="/recipes" element={<Recipes recipes={recipes} />} />
           <Route path="/about" element={<About />} />
+          <Route path="/recipes/:id" element={<RecipeDetails/>} />
         </Routes>
 
           ) : (
