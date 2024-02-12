@@ -125,21 +125,72 @@ body {
 
 /* SignUser Page */
 
-main {
+.main_container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
   height: 100vh;
-  
+  background-image: url(https://images.unsplash.com/photo-1516211697506-8360dbcfe9a4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .form_container{
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  border: 2px solid red;
-  width: 300px;
-  height: 300px;
+  border: 5px solid #797d62;
+  border-radius: 10%;
+  background-color: #718355;
+  width: 320px;
+  height: 340px;
+  padding: 20px;
+}
+
+.title_form {
+  font-style: "Raleway", sans-serif;
+  font-size: 32px;
+}
+
+.input_form {
+  width: 220px;
+  height: 30px;
+  margin: 12px;
+  padding: 5px;
+}
+
+.button_form{
+  margin: 10px;
+  width: 230px;
+  height: 40px;
+  background-color: #718355;
+  border: none;
+  font-family: "Raleway", sans-serif;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.button_form:hover{
+  background-color: #41521f;
+}
+
+.span_form {
+margin-top: 10px;
+padding: 5px;
+font-style: italic;
+}
+
+.span_button {
+  border: none;
+  background-color: #718355;
+  
+  cursor: pointer;
+}
+.span_button:hover {
+  border-bottom: 1px solid black;
 }
 
 /* Single recipe styling */

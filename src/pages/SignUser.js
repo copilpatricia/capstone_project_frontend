@@ -3,9 +3,8 @@ import axios from "axios";
 import { UserContext } from "../context/UserContext";
 
 function SignUser() {
-    const userCtx = useContext(UserContext);
-    const {setUser} = userCtx
-
+  const userCtx = useContext(UserContext);
+  const { setUser } = userCtx;
 
   const emailInputRef = useRef(null);
   const passwordInputRef = useRef(null);
@@ -29,7 +28,7 @@ function SignUser() {
       });
       console.log(res.data);
       setUser(res.data);
-      localStorage.setItem("blogUser", JSON.stringify(res.data))
+      localStorage.setItem("blogUser", JSON.stringify(res.data));
     } catch (error) {
       console.log(error);
     }
@@ -54,83 +53,77 @@ function SignUser() {
         password: passwordInputRef.current.value,
       });
       console.log(res.data);
-      setUser(res.data)
-      localStorage.setItem("blogUser", JSON.stringify(res.data))
+      setUser(res.data);
+      localStorage.setItem("blogUser", JSON.stringify(res.data));
     } catch (error) {
       console.log(error);
     }
   };
   return (
-    <main>
+    <main className="main_container">
       {showSignUp ? (
         <div>
-          <form
-            className="form_container"
-            onSubmit={handleSignIn}
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              padding: "10px",
-            }}
-          >
-            <h3>Sign In</h3>
-            <label htmlFor="email">Email</label>
+          <form className="form_container" onSubmit={handleSignIn}>
+            <h3 className="title_form">Welcome!</h3>
+
             <input
+              className="input_form"
               ref={emailInputRef}
               name="email"
               id="email"
               type="text"
               placeholder="Email"
             />
-            <label htmlFor="password">Password</label>
+
             <input
+              className="input_form"
               ref={passwordInputRef}
               name="password"
               id="password"
               type="password"
               placeholder="Password"
             />
-            <button type="submit">Sign In</button>
+            <button type="submit" className="button_form">
+              Sign In
+            </button>
+            <span className="span_form">
+              Don't have an account?{" "}
+              <button onClick={() => setShowSignUp(!showSignUp)} className="span_button">
+                Sign Up
+              </button>
+            </span>
           </form>
-          <span>
-            Don't have an account?{" "}
-            <button onClick={() => setShowSignUp(!showSignUp)}>Sign Up</button>
-          </span>
         </div>
       ) : (
         <div>
-          <form
-            className="form_container"
-            onSubmit={handleSignUp}
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              padding: "10px",
-            }}
-          >
-            <h3>Sign Up</h3>
-            <label htmlFor="email">Email</label>
+          <form className="form_container" onSubmit={handleSignUp}>
+            <h3 className="title_form">Welcome!</h3>
             <input
+              className="input_form"
               ref={emailInputRef}
               name="email"
               id="email"
               type="text"
               placeholder="Email"
             />
-            <label htmlFor="password">Password</label>
             <input
+              className="input_form"
               ref={passwordInputRef}
               name="password"
               id="password"
               type="password"
               placeholder="Password"
             />
-            <button type="submit">Sign Up</button>
+            <button type="submit" className="button_form">
+              Sign Up
+            </button>
+            <span className="span_form">
+              Already have an account?{" "}
+              <button onClick={() => setShowSignUp(!showSignUp)} className="span_button">
+                Sign In
+              </button>
+            </span>
           </form>
-          <span>
-            Already have an account?{" "}
-            <button onClick={() => setShowSignUp(!showSignUp)}>Sign In</button>
-          </span>
         </div>
       )}
     </main>
@@ -141,8 +134,6 @@ export default SignUser;
 
 // no control form = useRef - for this form doesn't need to react with what the user is going to type
 // control form = useState - when the user type React knows that something is going to change - starting to filter
-
-
 
 // extract the user information
 
