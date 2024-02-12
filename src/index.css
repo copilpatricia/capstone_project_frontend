@@ -243,7 +243,7 @@ font-style: italic;
 
 /* Footer styling */
 .super_container{
-  height: 200px;
+  height: 160px;
   background-color: #cfe1b9;
   border: 2px solid pink;
 }
@@ -255,12 +255,10 @@ font-style: italic;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  
+  margin-top: 50px;
+  margin-bottom: 90px;
   gap: 20px;
 }
 
-.subfooter_container{
-  background-color: red;
-  
-}
+
 
