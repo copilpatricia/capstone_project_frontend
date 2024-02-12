@@ -136,6 +136,43 @@ main {
   height: 300px;
 }
 
+/* Single recipe styling */
+
+.supercontainer_recipe{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.container_recipe{
+  border: 2px solid #ccd5ae;
+  
+  width: 400px;
+  min-height: 600px;
+  position: relative;
+  background-color: #fefae0;
+  padding: 20px;
+}
+
+.image_recipe{
+  width: 140px;
+  height: 140px;
+  border-radius: 40%;
+  border: 2px solid #ccd5ae;
+  align-content: center;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+#recipe_title {
+  margin-top: 80px;
+  text-align: center;
+}
+
 /* Footer styling */
 .super_container{
   height: 200px;

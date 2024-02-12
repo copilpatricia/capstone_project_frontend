@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 import MainPage from "./pages/MainPage";
 import Recipes from "./pages/Recipes";
 import About from "./pages/About";
@@ -40,6 +42,7 @@ function App() {
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <div>
+        <Nav />
         {
           user ? (
         <Routes>
@@ -53,6 +56,7 @@ function App() {
             <SignUser/>
           )
         }
+        <Footer />
       </div>
     </UserContext.Provider>
   );

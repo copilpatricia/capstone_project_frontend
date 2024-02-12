@@ -1,11 +1,9 @@
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
 
 
 function About() {
   return (
     <>
-      <Nav />
+      
       <div className="container-about">
         <h1 id="title_about">I LOVE FOOD!</h1>
         <p>
@@ -43,7 +41,6 @@ function About() {
         </p>
       </div>
      
-      <Footer />
     </>
   );
 }

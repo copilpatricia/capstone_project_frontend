@@ -1,11 +1,9 @@
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 
 function Recipes({recipes}) {
     return(
         <>
-        <Nav />
+        
         <div className="container_recipes">
             {recipes.map((recipe) => {
                 return (
@@ -20,7 +18,7 @@ function Recipes({recipes}) {
                 )
             })}
         </div>
-        <Footer />
+       
         </>
     )
 }

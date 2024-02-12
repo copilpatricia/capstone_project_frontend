@@ -24,10 +24,12 @@ function RecipeDetails() {
   }, [params.id]);
 
   return (
-    <div>
+    <div className="supercontainer_recipe">
       {recipe && (
-        <div>
-          <h1>{recipe.title}</h1>
+        <div className="container_recipe">
+          <img src={recipe.image} alt="single recipe" className="image_recipe" />  
+          <h1 id="recipe_title">{recipe.title}</h1>
+          <hr />
           <ul>
             {recipe.ingredients.map((ingredient, index) => (
               <li key={index}>{ingredient}</li>
