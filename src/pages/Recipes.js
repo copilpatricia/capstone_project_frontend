@@ -7,7 +7,7 @@ function Recipes({recipes}) {
         <div className="container_recipes">
             {recipes.map((recipe) => {
                 return (
-                    <Link to={`/recipes/${recipe._id}`} key={recipe._id} >
+                    <Link to={`/recipes/${recipe._id}`} key={recipe._id}  style={{ textDecoration: "none "}}>
                     <div className="recipes_box">
                     <img src={recipe.image} alt="recipe" className="img_recipes" />
                     <h5 key={recipe._id} className="title_recipes">{recipe.title}</h5>  
