@@ -10,7 +10,7 @@ function RecipeDetails() {
     const fetchData = async () => {
       try {
         const res = await fetch(
-          `http://localhost:4000/api/recipes/${params.id}`
+          `https://blog-app-backend-nrpv.onrender.com/api/recipes/${params.id}`
         );
         const data = await res.json();
         console.log(data);
@@ -27,7 +27,11 @@ function RecipeDetails() {
     <div className="supercontainer_recipe">
       {recipe && (
         <div className="container_recipe">
-          <img src={recipe.image} alt="single recipe" className="image_recipe" />  
+          <img
+            src={recipe.image}
+            alt="single recipe"
+            className="image_recipe"
+          />
           <h1 id="recipe_title">{recipe.title}</h1>
           <hr />
           <h3 className="recipe_subtitle">INGREDIENTS</h3>
