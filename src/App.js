@@ -13,20 +13,16 @@ import RecipeDetails from "./pages/RecipeDetails";
 
 function App() {
   let localStorageUser = JSON.parse(localStorage.getItem("blogUser"));
-  console.log(localStorageUser);
-  
+
   const [quote, setQuote] = useState([]);
   const [recipes, setRecipes] = useState([]);
   const [user, setUser] = useState(localStorageUser ? localStorageUser : null);
-
-
 
   // API for the quote
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch("https://api.gameofthronesquotes.xyz/v1/random");
       const data = await res.json();
-      console.log(data);
 
       setQuote(data);
     };
@@ -36,7 +32,9 @@ function App() {
   // API for the recipes
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("https://blog-app-backend-nrpv.onrender.com/api/recipes/");
+      const res = await fetch(
+        "https://blog-app-backend-nrpv.onrender.com/api/recipes/"
+      );
       const data = await res.json();
       console.log(data);
       setRecipes(data);

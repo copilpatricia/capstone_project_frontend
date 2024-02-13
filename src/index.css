@@ -207,9 +207,11 @@ body {
 
 .supercontainer_recipe {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 50px;
+  gap: 40px;
   background-image: url(https://images.unsplash.com/photo-1516211697506-8360dbcfe9a4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
   background-size: cover;
   background-repeat: no-repeat;
@@ -251,6 +253,48 @@ body {
   font-family: "Raleway";
   margin-top: 30px;
 }
+
+.review_container {
+  background-color: #fefae0;
+  width: 800px;
+  min-height: 300px;
+  border: 2px solid #ccd5ae;
+  padding: 20px;
+  
+}
+
+#review_title {
+  text-align: center;
+  font-family: "Raleway";
+  font-weight: normal;
+}
+
+#input_review {
+  width: 450px;
+  height: 30px;
+  font-family: "Raleway";
+}
+
+#other_reviews {
+  font-family: "Raleway";
+  font-weight: normal;
+ 
+
+}
+
+#review_btn {
+  margin-left: 5px;
+  background-color:#718355;
+  font-family: "Raleway";
+  font-weight: bold;
+  width: 70px;
+  height: 30px;
+  border-radius: 55%;
+  border: none;
+  cursor: pointer;
+}
+
+
 
 /* Footer styling */
 
