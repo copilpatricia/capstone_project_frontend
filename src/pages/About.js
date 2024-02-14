@@ -1,5 +1,3 @@
-
-
 function About() {
   return (
     <main className="main_about">

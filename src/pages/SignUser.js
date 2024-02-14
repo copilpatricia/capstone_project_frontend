@@ -7,6 +7,7 @@ function SignUser() {
   const { setUser } = userCtx;
 
   const emailInputRef = useRef(null);
+  const usernameInputRef = useRef(null);
   const passwordInputRef = useRef(null);
   const [showSignUp, setShowSignUp] = useState(false);
 
@@ -22,10 +23,13 @@ function SignUser() {
     }
     // POST request to the backend
     try {
-      const res = await axios.post("https://blog-app-backend-nrpv.onrender.com/api/users/signin", {
-        email: emailInputRef.current.value,
-        password: passwordInputRef.current.value,
-      });
+      const res = await axios.post(
+        "https://blog-app-backend-nrpv.onrender.com/api/users/signin",
+        {
+          email: emailInputRef.current.value,
+          password: passwordInputRef.current.value,
+        }
+      );
       console.log(res.data);
       setUser(res.data);
       localStorage.setItem("blogUser", JSON.stringify(res.data));
@@ -41,6 +45,11 @@ function SignUser() {
       emailInputRef.current.focus();
       return;
     }
+
+    if (usernameInputRef.current.value === "") {
+      usernameInputRef.current.focus();
+      return;
+    }
     if (passwordInputRef.current.value === "") {
       passwordInputRef.current.focus();
       return;
@@ -48,10 +57,14 @@ function SignUser() {
 
     // POST request to the backend
     try {
-      const res = await axios.post("https://blog-app-backend-nrpv.onrender.com/api/users/signup", {
-        email: emailInputRef.current.value,
-        password: passwordInputRef.current.value,
-      });
+      const res = await axios.post(
+        "https://blog-app-backend-nrpv.onrender.com/api/users/signup",
+        {
+          email: emailInputRef.current.value,
+          username: usernameInputRef.current.value,
+          password: passwordInputRef.current.value,
+        }
+      );
       console.log(res.data);
       setUser(res.data);
       localStorage.setItem("blogUser", JSON.stringify(res.data));
@@ -88,7 +101,10 @@ function SignUser() {
             </button>
             <span className="span_form">
               Don't have an account?{" "}
-              <button onClick={() => setShowSignUp(!showSignUp)} className="span_button">
+              <button
+                onClick={() => setShowSignUp(!showSignUp)}
+                className="span_button"
+              >
                 Sign Up
               </button>
             </span>
@@ -108,6 +124,14 @@ function SignUser() {
             />
             <input
               className="input_form"
+              ref={usernameInputRef}
+              name="username"
+              id="username"
+              type="text"
+              placeholder="username"
+            />
+            <input
+              className="input_form"
               ref={passwordInputRef}
               name="password"
               id="password"
@@ -119,7 +143,10 @@ function SignUser() {
             </button>
             <span className="span_form">
               Already have an account?{" "}
-              <button onClick={() => setShowSignUp(!showSignUp)} className="span_button">
+              <button
+                onClick={() => setShowSignUp(!showSignUp)}
+                className="span_button"
+              >
                 Sign In
               </button>
             </span>

@@ -2,33 +2,37 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+import { UserContext } from "../context/UserContext";
+import { useContext } from "react";
+
 function RecipeDetails() {
   const params = useParams();
   const [recipe, setRecipe] = useState(null);
   const [reviews, setReviews] = useState(null);
   const [comment, setComment] = useState("");
 
+  // import the user context to take the state of the user and id?
+  const userCtx = useContext(UserContext);
+  console.log(userCtx);
   //post a new review logic
 
-  const handleReviewSubmit = async(e) => {
+  const handleReviewSubmit = async (e) => {
     e.preventDefault();
 
     try {
       const res = await axios.post("https://blog-app-backend-nrpv.onrender.com/api/reviews/", {
-      // username: username,
-      review: comment
+        user_id: userCtx.user._id,
+        username: userCtx.user.username,
+        review: comment,
       });
 
-    console.log( res.data);
-      setReviews([...reviews, res.data]);
+      console.log(res.data);
+      setReviews([res.data, ...reviews]);
       setComment("");
-      
     } catch (error) {
       console.log(error);
     }
-  }
-
-
+  };
 
   // fetch the data from the backend to display the content of each recipe
   useEffect(() => {
@@ -92,34 +96,31 @@ function RecipeDetails() {
             </ul>
           </div>
         )}
-      <div
-        className="review_container"
+        <div className="review_container">
+          <h1 id="review_title">REVIEWS SECTION</h1>
+          <hr />
+          <form onSubmit={handleReviewSubmit}>
+            <input
+              id="input_review"
+              type="text"
+              value={comment}
+              placeholder="Give us a review for this recipe..."
+              onChange={(e) => setComment(e.target.value)}
+            />
+            <button id="review_btn">POST</button>
+          </form>
 
-      >
-        <h1 id="review_title">Reviews</h1>
-        <hr />
-        <form onSubmit={handleReviewSubmit}>
-          <input
-            id="input_review"
-            type="text"
-            value={comment}
-            placeholder="Give us a review for this recipe..."
-            onChange={(e) => setComment(e.target.value)}
-          />
-          <button id="review_btn">POST</button>
-        </form>
-        
-        <h2 id="other_reviews">Other reviews</h2>
-        { reviews && reviews.map((review) => {
-          return (
-            <>
-            <p>{review.username}</p>
-            <p>{review.review}</p>
-            </>
-
-          )
-        })}
-      </div>
+          <h2 id="other_reviews">Other reviews</h2>
+          {reviews &&
+            reviews.map((review) => {
+              return (
+                <div className="other_reviews">
+                  <p className="p_title">{review.username}</p>
+                  <p className="p_review">{review.review}</p>
+                </div>
+              );
+            })}
+        </div>
       </div>
     </>
   );

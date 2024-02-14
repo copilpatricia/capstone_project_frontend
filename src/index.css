@@ -263,6 +263,12 @@ body {
   
 }
 
+.other_reviews{
+  border: 2px solid #ccd5ae;
+  margin: 5px;
+  padding: 12px;
+}
+
 #review_title {
   text-align: center;
   font-family: "Raleway";
@@ -270,16 +276,26 @@ body {
 }
 
 #input_review {
-  width: 450px;
-  height: 30px;
+  width: 650px;
+  height: 40px;
   font-family: "Raleway";
 }
 
 #other_reviews {
   font-family: "Raleway";
   font-weight: normal;
- 
+  font-size: 26px;
 
+}
+
+.p_title {
+  font-family: "Raleway";
+  font-weight: bold;
+}
+
+.p_review {
+  font-family: "Raleway";
+  font-style: italic;
 }
 
 #review_btn {
