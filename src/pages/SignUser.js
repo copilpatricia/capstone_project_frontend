@@ -128,7 +128,7 @@ function SignUser() {
               name="username"
               id="username"
               type="text"
-              placeholder="username"
+              placeholder="Username"
             />
             <input
               className="input_form"
