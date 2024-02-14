@@ -114,7 +114,7 @@ function RecipeDetails() {
           {reviews &&
             reviews.map((review) => {
               return (
-                <div className="other_reviews">
+                <div className="other_reviews" key={review._id}>
                   <p className="p_title">{review.username}</p>
                   <p className="p_review">{review.review}</p>
                 </div>

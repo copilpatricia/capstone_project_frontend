@@ -162,10 +162,4 @@ export default SignUser;
 // no control form = useRef - for this form doesn't need to react with what the user is going to type
 // control form = useState - when the user type React knows that something is going to change - starting to filter
 
-// extract the user information
 
-//passwordInputRef.current.value
-//emailInputRef
-
-// create an object to store the values
-// push the object inside an array
