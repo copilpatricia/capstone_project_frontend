@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/1f6c9c71-1f37-446e-ac68-386d03b610e6/deploy-status)]()
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1f6c9c71-1f37-446e-ac68-386d03b610e6/deploy-status)](https://app.netlify.com/sites/coruscating-hamster-e9dfd0/overview)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
